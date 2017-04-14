@@ -49,8 +49,8 @@ design.addEventListener('change', (e) => {
 
 ///START OF REGISTER FOR ACTIVITIES
 const activities = document.getElementById('activities');
-var totalAmount;
-activities.addEventListener('change',(e) => {
+var totalAmount = 0;
+activities.addEventListener('change', (e) => {
     totalAmount = 0;
     const checkbox = event.target;
     const checked = checkbox.checked;
@@ -75,7 +75,7 @@ activities.addEventListener('change',(e) => {
             framework.disabled = true;
         }
     if(node.checked == true){
-            totalAmount += 200;
+            totalAmount += 100;
             libs.disabled = true;
         }
     if(main.checked == true){
@@ -215,13 +215,12 @@ function validation_cvv(){
     }
 }   
 
-var validation = new Boolean(validation_name() && validation_mail() && validation_checkbox() && validation_card() && validation_zip() && validation_cvv());
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => { 
-    //when everything pass, 
-    if (validation === true){    
-        e.preventDefault();
+    //when everything pass
+    if (validation_name() && validation_mail() && validation_checkbox() && validation_card() && validation_zip() && validation_cvv()){
+        console.log("pass");
         //hide all of the error indication
         inputName.style.border = "none"; 
         inputMail.style.border = "none"; 
@@ -232,6 +231,15 @@ form.addEventListener('submit', (e) => {
     }
     //when something goes wrong
     else{
+        console.log(validation);
+        console.log("pass");
+        console.log("pass");
+        console.log("pass");
+        console.log("pass");
+        console.log("pass");
+        console.log("pass");
+        console.log("pass");
+        console.log("NON-PASS");
         e.preventDefault();
         //provide error indication for the part that has error, and hide all of the error indication when user fix the error
         if (validation_name() === false){
