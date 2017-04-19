@@ -231,48 +231,47 @@ form.addEventListener('submit', (e) => {
     }
     //when something goes wrong
     else{
-        console.log(validation);
-        console.log("pass");
-        console.log("pass");
-        console.log("pass");
-        console.log("pass");
-        console.log("pass");
-        console.log("pass");
-        console.log("pass");
-        console.log("NON-PASS");
         e.preventDefault();
+        console.log(validation_name() && validation_mail() && validation_checkbox() && validation_card() && validation_zip() && validation_cvv());
+        console.log("NON-PASS");
         //provide error indication for the part that has error, and hide all of the error indication when user fix the error
         if (validation_name() === false){
+            console.log("name fail");
           inputName.style.border = "thick solid red";  
         }
         if (validation_name() === true){
           inputName.style.border = "none";  
         }
         if (validation_mail() === false){
+            console.log("mail fail");
           inputMail.style.border = "thick solid red"; 
         }
         if (validation_mail() === true){
           inputMail.style.border = "none"; 
         }
         if (validation_checkbox() === false){
+            console.log("checkbox fail");
             document.getElementById("activities").style.border = "thick solid red";
         }
         if (validation_checkbox() === true){
             document.getElementById("activities").style.border = "none";
         }
         if (validation_card() === false){
+            console.log("card fail");
             inputCard.style.border = "thick solid red";
         }
         if (validation_card() === true){
             inputCard.style.border = "none";
         }
         if (validation_zip() === false){
+            console.log("zip fail");
             inputZip.style.border = "thick solid red";
         }
         if (validation_zip() === true){
             inputZip.style.border = "none";
         }
         if (validation_cvv() === false){
+            console.log("cvv fail");
             inputCvv.style.border = "thick solid red";
         }
         if (validation_cvv() === true){
